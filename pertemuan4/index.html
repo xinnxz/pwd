@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .dark-mode {
+            background-color: #222;
+            color: #fff;
+        }
+    </style>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <p id="byId">SEBELUM KLIK</p>
+    <p class="byClass">SEBELUM KLIK</p>
+    <p class="byClass">SEBELUM KLIK</p>
+    <button onclick=" demoId()">Button Id</button>
+    <button onclick=" demoTag()">Button Tag</button>
+    <button onclick=" demoClass()">Button Class</button> -->
+
+    <div>
+        <h1>Belajar DOM</h1>
+        <button class="mode" onclick="toggleDarkMode()">Mode Malam</button>
+        <div class="box">
+            <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, doloribus.</p>
+        </div>
+    </div>
+
+    <script>
+        function demoId() {
+            let demo = document.getElementById('byId');
+            demo.innerHTML = 'SETELAH KLIK';
+            demo.style.background = 'rgba(200, 250, 50, .7)';
+        }
+
+        function demoTag() {
+            let demo = document.getElementsByTagName('p');
+            for (let i = 0; i < 3; i++) {
+                demo[i].innerHTML = 'SETELAH KLIK';
+                demo[i].style.background = 'rgba(200,150,150,.7)';
+            }
+        }
+
+        function demoClass() {
+            let demo = document.getElementsByClassName('byClass');
+            for (let i = 0; i < 3; i++) {
+                demo[i].innerHTML = 'SETELAH KLIK';
+                demo[i].style.background = 'rgba(0,200,250,.4)';
+            }
+        }
+
+        function toggleDarkMode() {
+            const container = document.querySelector('body');
+            container.classList.toggle('dark-mode');
+            const modeButton = document.querySelector('.mode');
+
+            if (container.classList.contains('dark-mode')) {
+                modeButton.innerHTML = 'Mode Siang';
+            } else {
+                modeButton.innerHTML = 'Mode Malam';
+            }
+
+        }
+    </script>
+</body>
+
+</html>
